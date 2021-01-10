@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "module": "ES2020",
+    "moduleResolution": "node",
+    "allowJs": true,
+    "checkJs": true,
+    "noEmit": true,
+    "allowSyntheticDefaultImports": true,
+    "lib": [
+      "es2020",
+    ]
+  },
+  "include": [
+    "tasksfile.js",
+    "scripts/",
+    "tasks/",
+    "utils/",
+    "romainprignon/**/*.js",
+  ],
+}
