@@ -11,7 +11,7 @@ class Trivy {
     sh(`curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/${this.version}/contrib/install.sh | sh -s -- -b ${binDir()}`)
   }
 
-  lint ({ path, tag }) {
+  check ({ path, tag }) {
     const config = `${resolve(path)}/.trivyignore`
 
     sh(`./bin/trivy image --ignorefile ${config} --exit-code 1 --severity HIGH,CRITICAL ${path}:${tag}`)

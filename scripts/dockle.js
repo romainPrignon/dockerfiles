@@ -10,7 +10,7 @@ class Dockle {
     sh(`sudo docker pull goodwithtech/dockle:${this.version}`)
   }
 
-  lint ({ path, tag }) {
+  check ({ path, tag }) {
     const sock = '/var/run/docker.sock:/var/run/docker.sock'
     const config = `${resolve(path)}/.dockleignore:/.dockleignore`
 

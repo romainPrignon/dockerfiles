@@ -34,12 +34,18 @@ function build (options, path, tag = defaultTag) {
 }
 
 help(lint, 'lint docker image', {
-  examples: 'npx task docker:lint romainprignon/ubuntu/focal/min [latest]'
+  examples: 'npx task docker:lint romainprignon/ubuntu/focal/min'
 })
-function lint (options, path, tag = defaultTag) {
+function lint (options, path) {
   hadolint.lint({ path })
-  dockle.lint({ path, tag })
-  trivy.lint({ path, tag })
+}
+
+help(check, 'check built docker image', {
+  examples: 'npx task docker:check romainprignon/ubuntu/focal/min [latest]'
+})
+function check (options, path, tag = defaultTag) {
+  dockle.check({ path, tag })
+  trivy.check({ path, tag })
 }
 
 help(test, 'test docker image', {
@@ -67,6 +73,7 @@ export {
   setup,
   build,
   lint,
+  check,
   test,
   debug,
   push
