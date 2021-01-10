@@ -6,7 +6,7 @@ class Dive {
   }
 
   setup () {
-    sh(`docker pull wagoodman/dive:${this.version}`)
+    sh(`sudo docker pull wagoodman/dive:${this.version}`)
   }
 
   debug ({ image }) {

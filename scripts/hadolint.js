@@ -7,7 +7,7 @@ class Hadolint {
   }
 
   setup () {
-    sh(`docker pull hadolint/hadolint:${this.version}`)
+    sh(`sudo docker pull hadolint/hadolint:${this.version}`)
   }
 
   lint ({ path }) {

@@ -19,7 +19,7 @@ npm install
 ```sh
 npx task docker:setup
 ```
-
+- logout/login so you can use docker without sudo
 
 ## Usage
 - See the tasksfile for a list of possible tasks

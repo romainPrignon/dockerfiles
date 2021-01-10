@@ -7,7 +7,7 @@ class Dockle {
   }
 
   setup () {
-    sh(`docker pull goodwithtech/dockle:${this.version}`)
+    sh(`sudo docker pull goodwithtech/dockle:${this.version}`)
   }
 
   lint ({ path, tag }) {
