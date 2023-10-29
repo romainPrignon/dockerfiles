@@ -50,3 +50,7 @@ task docker:test romainprignon/ubuntu/focal/min
 ## License
 
 The code is available under the [MIT license](LICENSE).
+
+
+# makefile
+make -j watch

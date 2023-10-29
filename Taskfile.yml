@@ -1,0 +1,23 @@
+version: '3'
+
+silent: true
+output: prefixed
+
+includes:
+  src:
+    taskfile: ./tasks/src.yml
+    aliases: [src]
+  docker:
+    taskfile: ./tasks/docker.yml
+    aliases: [docker]
+
+tasks:
+  default:
+    cmds:
+      - task --list-all
+  install:
+    cmds:
+      - npm ci
+    sources:
+      - package.json
+      - package-lock.json

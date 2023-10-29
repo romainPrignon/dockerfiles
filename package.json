@@ -26,6 +26,7 @@
     "gitmoji-cli": "^3.2.18",
     "jest": "^26.6.3",
     "jest-module-field-resolver": "0.0.1",
+    "nodemon": "^3.0.1",
     "tasksfile": "^5.1.1",
     "testcontainers": "^6.4.1",
     "typescript": "^4.1.3"

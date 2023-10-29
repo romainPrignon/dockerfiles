@@ -1,0 +1,60 @@
+version: '3'
+
+vars:
+  src: tasksfile.js scripts/ tasks/ utils/ romainprignon/
+
+tasks:
+  lint:
+    desc: lint sources
+    cmds:
+      - npx eslint {{.CLI_ARGS}} {{.src}}
+    sources:
+      - scripts/*
+      - tasks/*
+      - utils/*
+      - romainprignon/* # todo: handle duplicates vars
+
+  lint_watch:
+    aliases: [lint:watch]
+    desc: lint sources watch
+    cmds:
+      - npx nodemon -e yml,js -w scripts/ -w tasks/ -w utils/ -w romainprignon/ -x 'eslint {{.CLI_ARGS}} {{.src}}'
+    sources:
+      - scripts/*
+      - tasks/*
+      - utils/*
+      - romainprignon/* # todo: handle duplicates vars
+
+
+  check:
+    desc: typescheck sources
+    cmds:
+      - tsc {{.CLI_ARGS}}
+    preconditions:
+      - test -f tsconfig.json
+    sources:
+      - scripts/*
+      - tasks/*
+      - utils/*
+      - romainprignon/* # todo: handle duplicates vars
+
+  # not working
+  # check_watch:
+  #   aliases: [check:watch]
+  #   desc: typescheck sources with watch
+  #   cmds:
+  #     - task: check --watch
+
+  check_watch2:
+    aliases: [check:watch2]
+    desc: typescheck sources with watch 2
+    cmds:
+      - tsc
+    watch: true
+    preconditions:
+      - test -f tsconfig.json
+    sources:
+      - scripts/*
+      - tasks/*
+      - utils/*
+      - romainprignon/* # todo: handle duplicates vars
